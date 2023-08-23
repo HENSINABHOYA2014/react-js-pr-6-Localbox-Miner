@@ -1,24 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import './Crud.css';
+import Crud from './Crud';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
+import 'bootstrap-icons/font/bootstrap-icons.css'; 
+
+
 
 function App() {
+  const[openModal,setOpenModal]=useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <center>
+      <br/>
+      <br/>
+    <button onClick={()=>{setOpenModal(true)}}  className="btn btn-1">Add Employee Data</button>
+    {openModal && <Crud claseModal={setOpenModal}/>}
+    </center>
+    </>
   );
 }
 
